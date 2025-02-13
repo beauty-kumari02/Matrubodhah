@@ -8,6 +8,10 @@
 .click{
     color: blue;
 }
+.click:hover{
+    text-decoration: underline;
+    color:red;
+}
 body{
     font-family: 'Montserrat',sans-serif;
     background: #f6f5f7;
@@ -112,7 +116,7 @@ button.ghost{
     height: 100%;
     overflow: hidden;
     transition: transform 0.6s ease-in-out;
-    z-index: 100;
+    z-index: 2;
 }
 .overlay{
     background: #e5a186;
@@ -185,3 +189,16 @@ a{
     bottom: 10px;
     width: 100%;
 }
+
+.sign-up-button{
+
+    background-color:#e5a186;
+    color:#eee;
+}
+
+.sign-in-button{
+
+    background-color:#e5a186;
+    color:#eee;
+}
+

@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="scontentcss.css">
     <link rel="stylesheet" href="footercss.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- font awesome kit link -->
+    <script src="https://kit.fontawesome.com/422e4af3c2.js" crossorigin="anonymous"></script>
     <style>
         body{
             background-image: url('image.png');
@@ -128,30 +130,18 @@
         .card[for="c10"]{
             background-image: url(FOUR.png);
         }
-
-        /* Scroll to Top Button */
-        #scrollToTopBtn {
-            display: none;
-            position: fixed;
-            bottom: 120px;
-            right: 37px;
-            height: 50px;
-            width: 50px;
-            background-color: rgb(218, 128, 76);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            padding: 10px;
-            cursor: pointer;
-            font-size: 15px;
-        }
-  
-        #scrollToTopBtn:hover {
-            background-color: rgb(218, 128, 76);
-        }
     </style>
+
 </head>
 <body>
+    <!-- Scroll -->
+    <div id="scrollButton" class="hidden">
+        <div class="outer-circle">
+            <div class="inner-circle">
+                <div class="arrow">↑</div>
+            </div>
+        </div>
+    </div>
     <header>
         <nav>
             <a href="index.html" class="logo">मातृबोधः</a>
@@ -242,12 +232,9 @@
             </label>
         </div>
     </div>
- 
-    <button id="scrollToTopBtn" onclick="scrollToTop()">
-        <i class="fas fa-arrow-up fa-xl"></i>
-    </button>
 
-    <!-- Updated Footer Section --> 
+
+<!-- Updated Footer Section --> 
 <footer class="main-footer">
   <div class="footer-content">
     <div class="footer-section">
@@ -267,7 +254,8 @@
           href="https://github.com/Anjaliavv51/Matrubodhah"
           target="_blank"
           aria-label="Twitter"
-          ><i class="fab fa-twitter"></i
+          ><i
+          class="fa-brands fa-square-x-twitter"></i></i
         ></a>
         <a
           href="https://github.com/Anjaliavv51/Matrubodhah"
@@ -338,47 +326,42 @@
     <p>
       &copy; 2024 मातृबोधः. Made with <span class="heart">❤️</span> by
       <a href="https://github.com/Anjaliavv51/Matrubodhah" target="_blank"
-        >@Sakthi</a
-      >
+        >@Sakthi</a>
     </p>
   </div>
 </footer>
 
-    
+      <script
+      src="//code.tidio.co/5w3m6cpl10rvqjkkmhv1nx8p0fqloyq6.js"
+      async>
+     </script>
+    <script src="scrollscript.js"></script>
+    <script src="audio.js"></script>
+    <!-- Scroll to Top Button -->
     <script>
-        // Get the button
-        let mybutton = document.getElementById("scrollToTopBtn");
-      
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function () {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                mybutton.style.display = "block";
+        const scrollButton = document.getElementById('scrollButton');
+        const outerCircle = document.querySelector('.outer-circle');
+        const arrow = document.querySelector('.arrow');
+    // Function to handle scroll behavior
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollProgress = (scrollTop / scrollHeight) * 360;
+   // Show button after scrolling 7-8 lines (~100px)
+            if (scrollTop > 100) {
+                scrollButton.classList.add('visible');
             } else {
-                mybutton.style.display = "none";
+                scrollButton.classList.remove('visible');
             }
-        };
-      
-        // When the user clicks on the button, scroll to the top of the document
-        mybutton.onclick = function () {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        };
-      </script>
-    <script>
-        let next = document.querySelector('.next')
-let prev = document.querySelector('.prev')
-
-next.addEventListener('click', function(){
-    let items = document.querySelectorAll('.item')
-    document.querySelector('.slide').appendChild(items[0])
-})
-
-prev.addEventListener('click', function(){
-    let items = document.querySelectorAll('.item')
-    document.querySelector('.slide').prepend(items[items.length - 1]) 
-})
-    </script>
-    <script src="index.js"></script>
+            // Update the circular progress
+            outerCircle.style.setProperty('--scroll-progress', `${scrollProgress}deg`);
+        });
+        // Scroll-to-top functionality
+        scrollButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+</script>
+<script src="index.js"></script>
+    
 </body>
-
 </html>

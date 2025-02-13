@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="scontentcss.css">
     <link rel="stylesheet" href="footercss.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- font awesome kit link -->
+    <script src="https://kit.fontawesome.com/422e4af3c2.js" crossorigin="anonymous"></script>
     <style>
         /* Scroll to Top Button */
         #scrollToTopBtn {
@@ -51,6 +53,14 @@
     />
   </head>
   <body>
+    <!-- Scroll -->
+    <div id="scrollButton" class="hidden">
+        <div class="outer-circle">
+            <div class="inner-circle">
+                <div class="arrow">↑</div>
+            </div>
+        </div>
+    </div>
     <header>
       <nav>
         <!-- Wrap the logo text in an anchor tag -->
@@ -67,7 +77,8 @@
                     <li><a href="feedback.html">Feedback</a></li>
                 </ul>
             </li>
-            <li><a href="login.html">Login</a></li>
+            <li id="loginlist" ><a href="login.html">Login</a></li>
+            <li id="profilelist"><a  href="profile.html">Profile</a></li>
             <li><a href="faq.html">FAQ</a></li>
             <li><a href="contact.html" >Contact</a></li>
         </ul>
@@ -132,7 +143,7 @@
           <p class="subtitle ">
             A Chariot of Indian Children with Ancient Wisdom for Modern Times
           </p>
-          <a href="#" class="btn btn-primary">View Services</a>
+          <a href="View-Service.html" class="btn btn-primary">View Services</a>
         </div>
       </div>
 
@@ -203,7 +214,7 @@
     <section id="wisdom" class="wisdom-section">
       <div class="wisdom-content">
         <h1>मातृबोधः</h1>
-        <h2>Educating Kids with India’s Cultural Heritage</h2>
+        <h2>Educating Kids with India's Cultural Heritage</h2>
         <p>
           Our platform offers an immersive learning experience for children,
           blending education with the timeless wisdom of India's rich cultural
@@ -222,47 +233,161 @@
       </div>
     </section>
     <section class="content-section" id="content">
+      <h2 class="section-title">Our Learning Roadmap</h2>
       <div class="roadmap">
-        <!-- Roadmap Card 1 -->
-        <div class="roadmap-card">
-          <img src="WhatsApp Image 2024-09-13 at 00.42.39_4ba68142.jpg" alt="1" />
-          <h1>Beyond Numbers</h1>
-          <p class="card-text">
-            Explore the world of numbers through Indian cultural wisdom! Learn how
-            each number holds deep significance in myths, traditions, and festivals.
-            From the Trimurti (3 Gods) to the Dashavatara (10 Avatars of Vishnu),
-            let your child discover the beauty behind the numbers. Fun games and
-            interactive lessons will make counting an immersive experience!
-          </p>
-          <button class="read-more">Read More</button>
-        </div>
-        <!-- Roadmap Card 2 -->
-        <div class="roadmap-card">
-          <img src="WhatsApp Image 2024-09-05 at 23.59.21_11f94952.jpg" alt="2" />
-          <h1>Cultural Colors</h1>
-          <p class="card-text">
-            Colors aren't just visual they tell stories! Discover how each color
-            symbolizes something profound in Indian culture. Whether it's the
-            strength of red in Durga, the knowledge of yellow in Saraswati, or the
-            calmness of blue in Krishna, let your child connect with the traditions
-            that these colors represent.
-          </p>
-          <button class="read-more">Read More</button>
-        </div>
-        <!-- Roadmap Card 3 -->
-        <div class="roadmap-card">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Nurmahal_Sarai_Mughal_Heritage_Punjab_India.JPG/1280px-Nurmahal_Sarai_Mughal_Heritage_Punjab_India.JPG" alt="3" />
-          <h1>Heritage Map</h1>
-          <p class="card-text">
-            Travel across India's diverse regions and unlock the rich heritage
-            hidden in temples, monuments, and cultural sites. With our interactive
-            Heritage Map, your child can explore historical landmarks and their
-            fascinating stories, from Kashi Vishwanath to the Shakti Peethas.
-            Through fun games and engaging activities, they can solve puzzles,
-            collect cultural artifacts, and embark on adventures through India's
-            vast history!
-          </p>
-          <button class="read-more">Read More</button>
+        <div id="roadmapCarousel" class="carousel slide" data-bs-ride="carousel">
+          <!-- Carousel Indicators -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#roadmapCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#roadmapCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#roadmapCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#roadmapCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          </div>
+
+          <!-- Carousel Items -->
+          <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+              <div class="roadmap-cards-container">
+                <!-- Roadmap Card 1 -->
+                <div class="roadmap-card">
+                  <img src="WhatsApp Image 2024-09-13 at 00.42.39_4ba68142.jpg" alt="Beyond Numbers" />
+                  <h3>Beyond Numbers</h3>
+                  <p class="card-text">
+                    Beyond Numbers takes children on an enchanting journey through the cultural significance of numbers in Indian traditions, myths, and festivals. From the Trimurti (3 Gods) and Panchabhutas (5 Elements) to the Dashavatara (10 Avatars of Vishnu), each number holds a deeper meaning. By blending math with culture, it inspires curiosity and helps children discover the profound wisdom hidden in numbers.
+                  </p>
+                  <button class="read-more">Read More</button>
+                </div>
+                <!-- Roadmap Card 2 -->
+                <div class="roadmap-card">
+                  <img src="WhatsApp Image 2024-09-05 at 23.59.21_11f94952.jpg" alt="Cultural Colors" />
+                  <h3>Cultural Colors</h3>
+                  <p class="card-text">
+                    Colors in Indian culture are rich with symbolism, each carrying deep meanings. Red represents strength and passion, as seen in Goddess Durga, while yellow symbolizes knowledge, celebrated in Goddess Saraswati. Blue embodies divinity and calmness, reflected in Lord Krishna. Learn how these colors connect to spiritual and cultural values, bringing vibrancy to Indian traditions.
+                  </p>
+                  <button class="read-more">Read More</button>
+                </div>
+                <!-- Roadmap Card 3 -->
+                <div class="roadmap-card">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Nurmahal_Sarai_Mughal_Heritage_Punjab_India.JPG/1280px-Nurmahal_Sarai_Mughal_Heritage_Punjab_India.JPG" alt="Heritage Map" />
+                  <h3>Heritage Map</h3>
+                  <p class="card-text">
+                    Embark on a virtual journey across India's diverse regions and explore its rich heritage. From ancient temples to monumental landmarks, the Heritage Map offers an interactive way for children to discover historical sites and learn about their cultural and spiritual significance. Dive into the fascinating stories behind each iconic place and understand India’s glorious past.
+                  </p>
+                  <button class="read-more">Read More</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+              <div class="roadmap-cards-container">
+                <!-- Roadmap Card 4 -->
+                <div class="roadmap-card">
+                  <img src="diya.jpg" alt="Festival Journey" />
+                  <h3>Festival Journey</h3>
+                  <p class="card-text">
+                    Explore the magic of India’s festivals, where every celebration has a unique story. From Diwali’s lights to Holi’s colors, learn about the customs, values, and traditions behind each festival. Interactive activities and virtual celebrations make this journey both educational and enjoyable, bringing the spirit of India’s festivals to life.
+                  </p>
+                  <button class="read-more">Read More</button>
+                </div>
+                <!-- Roadmap Card 5 -->
+                <div class="roadmap-card">
+                  <img src="sanskrit.png" alt="Sanskrit Stories" />
+                  <h3>Sanskrit Stories</h3>
+                  <p class="card-text">
+                    Step into the world of Sanskrit through enchanting stories from the Panchatantra and Hitopadesha. As children explore these timeless tales, they’ll learn basic Sanskrit words and phrases, unlocking the wisdom of ancient India. Interactive exercises make the learning process fun, allowing children to engage with language while appreciating its cultural importance.
+                  </p>
+                  <button class="read-more">Read More</button>
+                </div>
+                <!-- Roadmap Card 6 -->
+                <div class="roadmap-card">
+                  <img src="yoga.png" alt="Yoga for Kids" />
+                  <h3>Yoga for Kids</h3>
+                  <p class="card-text">
+                    Introduce kids to yoga with simple, fun asanas and breathing exercises! Each pose is paired with a story from Indian mythology, such as Hanuman’s leap or the serpent Vasuki, making the practice both enjoyable and meaningful. Kids will build flexibility, focus, and mindfulness while connecting with ancient Indian wellness traditions.
+                  </p>
+                  <button class="read-more">Read More</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+              <div class="roadmap-cards-container">
+                <!-- Roadmap Card 7 -->
+                <div class="roadmap-card">
+                  <img src="rangoli.jpg" alt="Art & Crafts" />
+                  <h3>Art & Crafts</h3>
+                  <p class="card-text">
+                    Unleash creativity with traditional Indian arts and crafts! From Rangoli designs to Madhubani painting, children can create beautiful artwork while learning about the cultural significance of each art form. Explore the rich history and stories behind these crafts, giving kids a deeper connection to India’s artistic heritage.
+                  </p>
+                  <button class="read-more">Read More</button>
+                </div>
+                <!-- Roadmap Card 8 -->
+                <div class="roadmap-card">
+                  <img src="mythology.png" alt="Mythological Heroes" />
+                  <h3>Mythological Heroes</h3>
+                  <p class="card-text">
+                    Meet India’s mythological heroes and dive into their inspiring adventures! From Rama’s valor to Arjuna’s devotion, each hero represents timeless values like righteousness, courage, and wisdom. Through interactive quizzes and games, children will engage with these legendary figures, making the stories come alive in an exciting way.
+                  </p>
+                  <button class="read-more">Read More</button>
+                </div>
+                <!-- Roadmap Card 9 -->
+                <div class="roadmap-card">
+                  <img src="aryabhatta.png" alt="Science in Tradition" />
+                  <h3>Science in Tradition</h3>
+                  <p class="card-text">
+                    Discover the science embedded in India’s ancient traditions! From Ayurveda’s holistic approach to health to the precision of ancient astronomy, children can explore how our ancestors applied scientific principles in daily life. Learn how traditions like these laid the groundwork for modern scientific thinking and continue to inspire us today.
+                  </p>
+                  <button class="read-more">Read More</button>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- slide 4 -->
+            <div class="carousel-item">
+              <div class="roadmap-cards-container">
+                <!--Card 10 -->
+                <div class="roadmap-card">
+                  <img src="arts_music.jpg" alt="Traditional Arts & Music" />
+                  <h3>Traditional Arts & Music</h3>
+                  <p class="card-text">
+                    India’s traditional arts and music embody its rich cultural heritage. Madhubani, Warli, Pattachitra, and Kalamkari paintings depict folklore and nature, while Chikankari embroidery, Kanjeevaram weaving, and Terracotta pottery showcase craftsmanship. In music, Hindustani and Carnatic classical styles follow intricate ragas, while folk traditions like Baul, Lavani, and Bihu narrate stories. Instruments like the sitar, veena, and tabla enhance India’s vibrant artistic legacy.                  </p>
+                  <button class="read-more">Read More</button>
+                </div>
+                <!--Card 11 -->
+                <div class="roadmap-card">
+                  <img src="sports.jpg" alt="Indigenous Games & Sports" />
+                  <h3>Indigenous Games & Sports</h3>
+                  <p class="card-text">
+                    India’s traditional games reflect its cultural richness and community spirit. Mallakhamb blends yoga and gymnastics, while Kalaripayattu is one of the oldest martial arts. Board games like Pachisi and Chaupar emphasize strategy. Rural sports such as Jallikattu (bull-taming), Kambala (buffalo racing), and Yubi Lakpi (Manipuri rugby) showcase regional heritage. These games, once central to Indian life, are now being revived through cultural initiatives.
+                  </p>
+                  <button class="read-more">Read More</button>
+                </div>
+                <!--Card 12 -->
+                <div class="roadmap-card">
+                  <img src="school.jpeg" alt="Spiritual & Philosophical Schools" />
+                  <h3>Spiritual & Philosophical Schools</h3>
+                  <p class="card-text">
+                    India’s spiritual traditions shaped global thought. The six classical philosophies—Nyaya, Vaisheshika, Samkhya, Yoga, Mimamsa, and Vedanta—explore existence and liberation. Jainism and Buddhism emphasize non-violence and mindfulness, while the Bhakti and Sufi movements focus on devotion. Texts like the Bhagavad Gita and Upanishads inspire seekers. Yoga, meditation, and Ayurveda, rooted in Indian wisdom, continue to influence modern wellness practices.
+                  </p>
+                  <button class="read-more">Read More</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carousel Controls -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#roadmapCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#roadmapCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
       </div>
     </section>
@@ -273,6 +398,7 @@
     </button>
 
     <button id="scrollToTopBtn" onclick="scrollToTop()">↑</button>
+    
     <!-- Footer Section -->
     <footer class="main-footer">
     <div class="footer-content">
@@ -293,8 +419,7 @@
           href="https://github.com/Anjaliavv51/Matrubodhah"
           target="_blank"
           aria-label="Twitter"
-          ><i class="fab fa-twitter"></i
-        ></a>
+          ><i class="fa-brands fa-square-x-twitter"></i></a>
         <a
           href="https://github.com/Anjaliavv51/Matrubodhah"
           target="_blank"
@@ -376,25 +501,34 @@
     ></script>
     <script src="scrollscript.js"></script>
     <script src="audio.js"></script>
-    <script>
-        // Get the button
-        let mybutton = document.getElementById("scrollToTopBtn");
-      
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function () {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                mybutton.style.display = "block";
-            } else {
-                mybutton.style.display = "none";
-            }
-        };
-      
-        // When the user clicks on the button, scroll to the top of the document
-        mybutton.onclick = function () {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        };
-      </script>
+    <!-- Scroll to Top Button -->
+<script>
+   const scrollButton = document.getElementById('scrollButton');
+const outerCircle = document.querySelector('.outer-circle');
+const arrow = document.querySelector('.arrow');
+
+// Function to handle scroll behavior
+window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollProgress = (scrollTop / scrollHeight) * 360;
+
+    // Show button after scrolling 7-8 lines (~100px)
+    if (scrollTop > 100) {
+        scrollButton.classList.add('visible');
+    } else {
+        scrollButton.classList.remove('visible');
+    }
+
+    // Update the circular progress
+    outerCircle.style.setProperty('--scroll-progress', `${scrollProgress}deg`);
+});
+
+// Scroll-to-top functionality
+scrollButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
 
 
 </body>
@@ -402,6 +536,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="index.js"></script>
+    <script src="roadmap.js"></script>
     <script>
       document.querySelectorAll('.read-more').forEach(button => {
     button.addEventListener('click', () => {
@@ -419,6 +554,19 @@
 });
 
     </script>
+
+    <script>
+      const login = document.getElementById("loginlist")
+      const profile = document.getElementById("profilelist")
+      if (localStorage.getItem("token")) {
+        console.log("user logged in")
+        login.style.display = "none"
+        profile.style.display="block"
+      }else{
+        console.log("user not logged in")
+        login.style.display = "block"
+        profile.style.display="none"
+      }
+    </script>
   </body>
 </html>
-
